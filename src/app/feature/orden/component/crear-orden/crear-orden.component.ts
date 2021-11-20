@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Orden } from '@orden/shared/model/orden';
 import * as moment from 'moment';
 
 @Component({
@@ -10,6 +11,7 @@ import * as moment from 'moment';
 export class CrearOrdenComponent implements OnInit {
 
   formularioOrden: FormGroup;
+  orden: Orden;
 
 
   constructor(private formBuilder: FormBuilder) { }
@@ -20,7 +22,11 @@ export class CrearOrdenComponent implements OnInit {
       identificacion: ['', Validators.minLength(10)],
       fechaNacimiento: [this.obtenerFechaActual()],
       tiempoExtra: [0, Validators.max(20)]
-    })
+    });
+  }
+
+  crear() {
+    this.orden = this.formularioOrden.value;
   }
 
 

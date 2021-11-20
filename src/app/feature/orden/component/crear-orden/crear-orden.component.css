@@ -1,5 +1,13 @@
-.body {
+body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
     padding: 2% 4% 2% 4%;
+}
+
+.espacio {
+    height: 6vh;
 }
 
 mat-card {
@@ -8,6 +16,9 @@ mat-card {
     justify-content: center;
     align-items: center;
     margin-bottom: 1vh;
+
+    width: 100%;
+    max-width: 500px;
 }
 
 .informacion {
@@ -22,6 +33,7 @@ mat-card {
 }
 
 #card-formulario {
+    padding-top: 4vh;
     background-color: #f6f6f6;
 }
 
@@ -36,12 +48,16 @@ form {
     align-items: center;
 }
 
-.mat-input {
+.width-100 {
     width: 100%;
 }
 
 input {
     color: black;
+}
+
+mat-datepicker-toggle {
+    color: black !important;
 }
 
 
@@ -67,3 +83,5 @@ input {
     /** underline border color on focused **/
     background-color: black !important;
 }
+
+/*****/
