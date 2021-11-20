@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MenuItem } from '@core/modelo/menu-item';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +8,7 @@ import { MenuItem } from '@core/modelo/menu-item';
 export class NavbarComponent implements OnInit {
 
   @Input()
-  items: MenuItem[];
+  paginaActual = '';
 
   constructor() { }
 
