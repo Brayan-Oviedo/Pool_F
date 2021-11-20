@@ -9,11 +9,9 @@ import { HttpService } from './services/http.service';
 import { ManejadorError } from './interceptor/manejador-error';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material.module';
-import { NavbarComponent } from '@shared/directivas/navbar/component/navbar.component';
-import { MenuComponent } from '@shared/directivas/menu/component/menu.component';
 
 @NgModule({
-  declarations: [ToolbarComponent, NavbarComponent, MenuComponent],
+  declarations: [ToolbarComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -21,9 +19,7 @@ import { MenuComponent } from '@shared/directivas/menu/component/menu.component'
   ],
   exports: [
     ToolbarComponent,
-    NavbarComponent,
-    MaterialModule,
-    MenuComponent
+    MaterialModule    
   ],
   providers: [
     HttpService,
