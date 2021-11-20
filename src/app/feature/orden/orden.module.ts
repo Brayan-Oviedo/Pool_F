@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { SharedModule } from "@shared/shared.module";
-import { CrearOrdenComponent } from "./crear-orden/crear-orden.component";
+import { CrearOrdenComponent } from "./component/crear-orden/crear-orden.component";
+import { OrdenComponent } from "./component/orden/orden.component";
 import { OrdenRoutingModule } from "./orden-routing.module";
-import { OrdenComponent } from "./orden/orden.component";
 
 @NgModule({
     declarations: [

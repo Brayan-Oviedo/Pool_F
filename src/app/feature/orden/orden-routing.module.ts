@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { CrearOrdenComponent } from "./crear-orden/crear-orden.component";
-import { OrdenComponent } from "./orden/orden.component";
+import { CrearOrdenComponent } from "./component/crear-orden/crear-orden.component";
+import { OrdenComponent } from "./component/orden/orden.component";
 
 const routes: Routes = [
   {

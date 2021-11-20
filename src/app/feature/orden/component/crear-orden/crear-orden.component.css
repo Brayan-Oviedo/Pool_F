@@ -1,0 +1,69 @@
+.body {
+    padding: 2% 4% 2% 4%;
+}
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.informacion {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#descripcion {
+    margin: auto;
+}
+
+#card-formulario {
+    background-color: #f6f6f6;
+}
+
+form {
+    width: 80%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.mat-input {
+    width: 100%;
+}
+
+input {
+    color: black;
+}
+
+
+
+/*++++++++++++  Material Input Color  ++++++++++++*/
+
+::ng-deep .mat-form-field .mat-form-field-label {
+    /** Change label color on label **/
+    color: black !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    /** Change color of underline **/
+    background-color: black !important;
+} 
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    /** Change label color on focused **/
+    color: black !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+    /** underline border color on focused **/
+    background-color: black !important;
+}

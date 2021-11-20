@@ -9,6 +9,7 @@ import { HttpService } from './services/http.service';
 import { ManejadorError } from './interceptor/manejador-error';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ToolbarComponent],
@@ -19,7 +20,8 @@ import { MaterialModule } from './material.module';
   ],
   exports: [
     ToolbarComponent,
-    MaterialModule    
+    MaterialModule,
+    ReactiveFormsModule 
   ],
   providers: [
     HttpService,
