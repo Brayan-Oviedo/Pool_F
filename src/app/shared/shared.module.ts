@@ -8,8 +8,8 @@ import { ErrorCamposPlantillaComponent } from './directivas/error-campos/compone
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TrackByPipe } from './pipe/track-by.pipe';
 import { MaterialModule } from '@core/material.module';
-import { MenuComponent } from './directivas/menu/component/menu.component';
-import { NavbarComponent } from './directivas/navbar/component/navbar.component';
+import { MenuComponent } from './component/menu/menu.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { NavbarComponent } from './directivas/navbar/component/navbar.component'
     TrackByPipe
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     FormsModule,
     MaterialModule

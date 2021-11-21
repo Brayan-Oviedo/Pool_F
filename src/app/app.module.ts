@@ -9,7 +9,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrdenModule } from '@orden/orden.module';
 import { HomeModule } from '@home/home.module';
-
+import { TicketModule } from './feature/ticket/ticket.module';
+import { ClienteModule } from './feature/cliente/cliente.module';
 
 
 @NgModule({
@@ -23,6 +24,8 @@ import { HomeModule } from '@home/home.module';
     CoreModule,
     HomeModule,
     OrdenModule,
+    TicketModule,
+    ClienteModule,
     BrowserAnimationsModule
   ],
   providers: [CookieService],

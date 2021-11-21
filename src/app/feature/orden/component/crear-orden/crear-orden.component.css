@@ -83,3 +83,7 @@ mat-datepicker-toggle {
     /** underline border color on focused **/
     background-color: black !important;
 }
+
+::placeholder { 
+    color: black;
+}

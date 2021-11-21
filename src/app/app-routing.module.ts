@@ -11,7 +11,8 @@ const routes: Routes = [
     canActivate: [SecurityGuard]
   },
   { path: 'producto', loadChildren: () => import('@producto/producto.module').then(mod => mod.ProductoModule) },
-  { path: 'orden', loadChildren: () => import('@orden/orden.module').then(mod => mod.OrdenModule) }
+  { path: 'orden', loadChildren: () => import('@orden/orden.module').then(mod => mod.OrdenModule) },
+  { path: 'cliente', loadChildren: () => import('@cliente/cliente.module').then(mod => mod.ClienteModule) }
 ];
 
 @NgModule({

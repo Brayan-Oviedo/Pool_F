@@ -19,25 +19,25 @@
             </div>
         </form>
 
-        <form [formGroup]="formularioCliente">
+        <form [formGroup]="formularioCliente" (ngSubmit)="crear()">
 
             <div class="formulario">
 
                 <mat-form-field class="width-100">
                     <mat-label>Identificación</mat-label>
-                    <input type="text" matInput placeholder="Ingrese la identificación" formControlName="identificacion">
+                    <input type="text" matInput placeholder="Ingresa la identificación" formControlName="identificacion">
                 </mat-form-field>
     
                 <mat-form-field class="width-100">
-                    <mat-label>Ingresa una fecha de nacimiento</mat-label>
-                    <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput [matDatepicker]="picker" placeHolder="Ingrese la fecha de nacimiento" formControlName="fechaNacimiento">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
     
                 <span class="espacio"></span>
     
-                <button class="width-100" (click)="crear()" mat-raised-button>Crear</button>
+                <button class="width-100" type="submit" mat-raised-button>Crear</button>
             </div>
         </form>
     </mat-card>

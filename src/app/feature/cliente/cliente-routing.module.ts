@@ -1,0 +1,23 @@
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { ClienteComponent } from "./component/cliente/cliente.component";
+import { ListarOrdenesComponent } from "./component/listar-ordenes/listar-ordenes.component";
+
+const routes: Routes = [
+    {
+      path: '',
+      component: ClienteComponent,
+      children: [
+        {
+          path: "listar-ordenes",
+          component: ListarOrdenesComponent
+        }
+      ]
+    }
+  ];
+  
+  @NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+  })
+  export class ClienteRoutingModule { }
