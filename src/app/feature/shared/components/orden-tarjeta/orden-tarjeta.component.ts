@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Cliente } from '@cliente/shared/model/cliente';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Orden } from '@orden/shared/model/orden';
 
 @Component({
@@ -9,11 +8,17 @@ import { Orden } from '@orden/shared/model/orden';
 })
 export class OrdenTarjetaComponent implements OnInit {
 
-  @Input() orden: Orden = new Orden(1, 2, new Cliente('123', '2001-06-27'));
+  @Input() orden: Orden;
+
+  @Output() eliminar = new EventEmitter<Orden>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  doEliminar() {
+    this.eliminar.emit(this.orden);
   }
 
 }

@@ -7,7 +7,7 @@ body {
 }
 
 .espacio {
-    height: 6vh;
+    height: 5vh;
 }
 
 mat-card {
@@ -20,11 +20,15 @@ mat-card {
     max-width: 500px;
 }
 
-.informacion {
+.fila {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+}
+
+mat-card-title {
+    margin: auto;
 }
 
 #descripcion {

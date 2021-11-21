@@ -38,10 +38,9 @@ export class CrearOrdenComponent implements OnInit {
 
 
   private mostrarTicket(ticket: Observable<Ticket>) {
-    let t = new Ticket(1, 2000, moment().toDate().toString());
-      this.dialogo.open(TicketDialogComponent, { data: t });
     ticket.subscribe(ticket => {
-      
+      let t = new Ticket(1, 2000, moment().toDate().toString());
+      this.dialogo.open(TicketDialogComponent, { data: t });
       console.log(ticket);
     });
   }

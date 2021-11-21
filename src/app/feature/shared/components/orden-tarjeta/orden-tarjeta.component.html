@@ -7,8 +7,7 @@
             <h2>Orden: {{ orden.id }}</h2>
         </div>
 
-        <mat-list-item>
-        </mat-list-item>
+        <mat-list-item></mat-list-item>
 
         <mat-list-item>
             <mat-icon>hourglass_full</mat-icon>
@@ -30,12 +29,7 @@
         <mat-divider></mat-divider>
 
         <mat-list-item>
-            <button class="width-100" color="warn" mat-raised-button>Eliminar</button>
+            <button class="width-100" color="warn" (click)="doEliminar()" mat-raised-button>Eliminar</button>
         </mat-list-item>
     </mat-list>
-
-    <div *ngIf="orden" id="informacion">
-
-
-    </div>
 </mat-card>

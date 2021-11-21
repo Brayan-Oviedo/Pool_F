@@ -1,29 +1,31 @@
 <mat-dialog-content>
 
-    <div *ngIf="ticket" id="informacion">
+
+    <mat-list>
 
         <div class="fila">
             <mat-icon>loyalty</mat-icon>
-            <h2>Ticket: {{ ticket.id }}</h2>
+            <h2>Ticket {{ ticket.id }}</h2>
         </div>
 
-        <span class="espacio"></span>
+        <mat-list-item></mat-list-item>
 
-        <div class="fila">
+        <mat-list-item>
             <mat-icon> attach_money</mat-icon>
-            <h3>{{ ticket.costoTotal }}</h3>
-        </div>
+            <h3>{{ ticket.costoTotal }} $</h3>
+        </mat-list-item>
 
-        <span class="espacio"></span>
-
-        <div class="fila">
+        <mat-list-item>
             <mat-icon> insert_invitation</mat-icon>
             <h3>Vence: {{ ticket.fechaVencimiento }}</h3>
-        </div>
+        </mat-list-item>
 
-        <span class="espacio"></span>
+        <mat-list-item></mat-list-item>
 
-        <button class="width-100" (click)="cerrar()" mat-stroked-button>Cerrar</button>
-    </div>
+
+        <mat-list-item>
+            <button class="width-100" (click)="cerrar()" mat-stroked-button>Cerrar</button>
+        </mat-list-item>
+    </mat-list>
 
 </mat-dialog-content>
