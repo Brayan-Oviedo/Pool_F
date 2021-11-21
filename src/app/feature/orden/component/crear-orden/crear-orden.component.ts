@@ -11,6 +11,7 @@ import * as moment from 'moment';
 export class CrearOrdenComponent implements OnInit {
 
   formularioOrden: FormGroup;
+  formularioCliente: FormGroup;
   orden: Orden;
 
 
@@ -18,20 +19,35 @@ export class CrearOrdenComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.formularioOrden = this.formBuilder.group({
-      identificacion: ['', Validators.minLength(10)],
-      fechaNacimiento: [this.obtenerFechaActual()],
-      tiempoExtra: [0, Validators.max(20)]
-    });
+    this.crearFormularioOrden();
   }
 
   crear() {
     this.orden = this.formularioOrden.value;
+    this.orden.cliente = this.formularioCliente.value;
+    this.orden.cliente.fechaNacimiento = this.formatearFecha(new Date(this.orden.cliente.fechaNacimiento));
+    
+  }
+
+  private crearFormularioOrden() {
+    this.formularioOrden = this.formBuilder.group({
+      tiempoExtra: [0, Validators.max(20)]
+    });
+
+    this.formularioCliente = this.formBuilder.group({
+      identificacion: ['', Validators.minLength(10)],
+      fechaNacimiento: [this.obtenerFechaActual()]
+    });
   }
 
 
-  private obtenerFechaActual(): Date{
-    return new Date(moment().format('YYYY-MM-DD'));
+  private obtenerFechaActual(): string {
+    return this.formatearFecha(moment().toDate());
+  }
+
+  private formatearFecha(fecha: Date) {
+    let fechaNueva = moment(fecha).format('YYYY-MM-DD');
+    return fechaNueva;
   }
 
 }
