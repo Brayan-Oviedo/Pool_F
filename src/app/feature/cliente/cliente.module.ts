@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
-import { SharedModule } from "@shared/shared.module";
+import { FeatureSharedModule } from "../shared/feature-shared.module";
 import { ClienteRoutingModule } from "./cliente-routing.module";
 import { ClienteComponent } from "./component/cliente/cliente.component";
 import { ListarOrdenesComponent } from './component/listar-ordenes/listar-ordenes.component';
+import { ClienteService } from "./shared/service/cliente.service";
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { ListarOrdenesComponent } from './component/listar-ordenes/listar-ordene
     ],
     imports: [
         ClienteRoutingModule,
-        SharedModule
-    ]
+        FeatureSharedModule
+    ],
+    providers: [ClienteService]
 })
 export class ClienteModule { }

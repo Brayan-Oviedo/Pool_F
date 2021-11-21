@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from '@cliente/shared/service/cliente.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-listar-ordenes',
@@ -9,14 +11,15 @@ export class ListarOrdenesComponent implements OnInit {
 
 
   titulo = 'Cliente';
+  ordenes = of([]);
 
-  constructor() { }
+  constructor(protected clienteServicio: ClienteService) { }
 
   ngOnInit(): void {
   }
 
   obtenerOrdenes(identificacion: string) {
-    console.log(identificacion);
+    this.ordenes = this.clienteServicio.obtenerOrdenesPorCliente(identificacion);
   }
 
 }

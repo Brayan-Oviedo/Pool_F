@@ -13,4 +13,8 @@ export class OrdenService {
     return this.http.doPost<Orden, Ticket>(`${environment.endpoint}/ordenes`, orden,
                                             this.http.optsName('crear orden'));
   }
+
+  public obtenerOrdenePorCliente(identificacionCliente: string) {
+    return this.http.doGet<Orden[]>(`${environment.endpoint}/ordenes/cliente/${identificacionCliente}`, )
+  }
 }
