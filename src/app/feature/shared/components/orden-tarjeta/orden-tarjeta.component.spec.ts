@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialModule } from '@core/material.module';
 
 import { OrdenTarjetaComponent } from './orden-tarjeta.component';
 
@@ -8,7 +9,8 @@ describe('OrdenTarjetaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrdenTarjetaComponent ]
+      declarations: [ OrdenTarjetaComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   });
