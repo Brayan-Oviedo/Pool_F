@@ -14,12 +14,8 @@ export class OrdenService {
                                             this.http.optsName('crear orden'));
   }
 
-  public obtenerOrdenePorCliente(identificacionCliente: string) {
-    return this.http.doGet<Orden[]>(`${environment.endpoint}/ordenes/cliente/${identificacionCliente}`, )
-  }
-
   public eliminar(orden: Orden) {
-    return this.http.doDelete<boolean>(`${environment.endpoint}/productos/${orden.id}`,
+    return this.http.doDelete<boolean>(`${environment.endpoint}/ordenes/${orden.id}`,
                                                  this.http.optsName('eliminar orden'));
   }
 }
