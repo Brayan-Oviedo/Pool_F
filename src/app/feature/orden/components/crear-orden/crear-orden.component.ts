@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { SwalService } from '@core/services/swal.service';
 import { Orden } from '@orden/shared/model/orden';
 import { OrdenService } from '@orden/shared/service/orden.service';
 import * as moment from 'moment';
@@ -22,7 +23,8 @@ export class CrearOrdenComponent implements OnInit {
   constructor(
     protected formBuilder: FormBuilder,
     protected ordenService: OrdenService,
-    protected dialogo: MatDialog
+    protected dialogo: MatDialog,
+    protected swalService: SwalService
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +43,9 @@ export class CrearOrdenComponent implements OnInit {
     ticket.subscribe(
       ticket => {
         this.dialogo.open(TicketDialogComponent, { data: ticket });
+        this.swalService.success('Orden creada','');
+      }, fail => {
+        this.swalService.error('No se logro crear el ticket', fail.error.mensaje);
       }
     );
   }

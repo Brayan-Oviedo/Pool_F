@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '@cliente/shared/service/cliente.service';
+import { SwalService } from '@core/services/swal.service';
 import { Orden } from '@orden/shared/model/orden';
 import { OrdenService } from '@orden/shared/service/orden.service';
 import { Observable } from 'rxjs';
@@ -18,7 +19,8 @@ export class ListarOrdenesComponent implements OnInit {
 
   constructor(
     protected clienteServicio: ClienteService,
-    protected ordenService: OrdenService
+    protected ordenService: OrdenService,
+    protected swalService: SwalService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +35,7 @@ export class ListarOrdenesComponent implements OnInit {
     this.ordenService.eliminar(orden).subscribe(() => {
       this.obtenerOrdenes(this.identificacion);
     }, fail => {
-      console.log('Fail: ' + fail.error.message);
+      this.swalService.error('No se logro eliminar la orden', fail.error.message);
     });
   }
 
