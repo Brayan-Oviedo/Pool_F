@@ -14,7 +14,6 @@ export class OrdenService {
   }
 
   public eliminar(orden: Orden) {
-    console.log(`${environment.endpoint}/ordenes/${orden.id}`)
     return this.http.doDelete<boolean>(`${environment.endpoint}/ordenes/${orden.id}`);
   }
 }
