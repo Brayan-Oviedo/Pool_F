@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '@cliente/shared/service/cliente.service';
 import { Orden } from '@orden/shared/model/orden';
 import { OrdenService } from '@orden/shared/service/orden.service';
-import { of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listar-ordenes',
@@ -13,7 +13,8 @@ export class ListarOrdenesComponent implements OnInit {
 
 
   titulo = 'Cliente';
-  ordenes = of([]);
+  ordenes: Observable<Orden[]>;
+  identificacion: string;
 
   constructor(
     protected clienteServicio: ClienteService,
@@ -24,11 +25,16 @@ export class ListarOrdenesComponent implements OnInit {
   }
 
   obtenerOrdenes(identificacion: string) {
+    this.identificacion = identificacion;
     this.ordenes = this.clienteServicio.obtenerOrdenesPorCliente(identificacion);
   }
 
   eliminarOrden(orden: Orden) {
-    this.ordenService.eliminar(orden);
+    this.ordenService.eliminar(orden).subscribe(() => {
+      this.obtenerOrdenes(this.identificacion);
+    }, fail => {
+      console.log('Fail: ' + fail.error.message);
+    });
   }
 
 }

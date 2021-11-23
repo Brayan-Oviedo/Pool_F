@@ -10,12 +10,11 @@ export class OrdenService {
   constructor(protected http: HttpService) { }
 
   public crear(orden: Orden) {
-    return this.http.doPost<Orden, Ticket>(`${environment.endpoint}/ordenes`, orden,
-                                            this.http.optsName('crear orden'));
+    return this.http.doPost<Orden, Ticket>(`${environment.endpoint}/ordenes`, orden);
   }
 
   public eliminar(orden: Orden) {
-    return this.http.doDelete<boolean>(`${environment.endpoint}/ordenes/${orden.id}`,
-                                                 this.http.optsName('eliminar orden'));
+    console.log(`${environment.endpoint}/ordenes/${orden.id}`)
+    return this.http.doDelete<boolean>(`${environment.endpoint}/ordenes/${orden.id}`);
   }
 }

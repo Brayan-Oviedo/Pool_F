@@ -33,16 +33,16 @@ export class CrearOrdenComponent implements OnInit {
   crear() {
     let orden = this.obtenerOrdenDelFormulario();
     let ticket = this.ordenService.crear(orden);
-    this.mostrarTicket(ticket)
+    this.mostrarTicket(ticket);
   }
 
 
   private mostrarTicket(ticket: Observable<Ticket>) {
-    ticket.subscribe(ticket => {
-      let t = new Ticket(1, 2000, moment().toDate().toString());
-      this.dialogo.open(TicketDialogComponent, { data: t });
-      console.log(ticket);
-    });
+    ticket.subscribe(
+      ticket => {
+        this.dialogo.open(TicketDialogComponent, { data: ticket });
+      }
+    );
   }
 
 
