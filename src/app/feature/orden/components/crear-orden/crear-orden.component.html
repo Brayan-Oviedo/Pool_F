@@ -35,9 +35,9 @@
 
                 <mat-form-field class="width-100">
                     <mat-label>Fecha de nacimiento</mat-label>
-                    <input id="fechaNacimientoCliente" [readonly]="true" validar matInput [matDatepicker]="picker" placeHolder="Ingrese la fecha de nacimiento"
+                    <input id="fechaNacimientoCliente"  validar matInput [matDatepicker]="picker" placeHolder="Ingrese la fecha de nacimiento"
                         formControlName="fechaNacimiento">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle id="pickerFechaNacimiento" matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
 
