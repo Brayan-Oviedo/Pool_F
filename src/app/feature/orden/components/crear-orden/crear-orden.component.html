@@ -18,7 +18,7 @@
 
                 <mat-form-field class="width-100">
                     <mat-label>Tiempo Extra</mat-label>
-                    <input validar type="number" matInput placeholder="Ingrese el tiempo extra" formControlName="tiempoExtra">
+                    <input id="tiempoExtraOrden" validar type="number" matInput placeholder="Ingrese el tiempo extra" formControlName="tiempoExtra">
                 </mat-form-field>
             </div>
         </form>
@@ -29,13 +29,13 @@
 
                 <mat-form-field class="width-100">
                     <mat-label>Identificación</mat-label>
-                    <input validar type="text" matInput placeholder="Ingresa la identificación"
+                    <input id="identificacionCliente" validar type="text" matInput placeholder="Ingresa la identificación"
                         formControlName="identificacion">
                 </mat-form-field>
 
                 <mat-form-field class="width-100">
                     <mat-label>Fecha de nacimiento</mat-label>
-                    <input [readonly]="true" validar matInput [matDatepicker]="picker" placeHolder="Ingrese la fecha de nacimiento"
+                    <input id="fechaNacimientoCliente" [readonly]="true" validar matInput [matDatepicker]="picker" placeHolder="Ingrese la fecha de nacimiento"
                         formControlName="fechaNacimiento">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
@@ -43,7 +43,7 @@
 
                 <span class="espacio"></span>
 
-                <button class="width-100" *ngIf="ordenForm.valid && clienteForm.valid" type="submit" mat-raised-button>Crear</button>
+                <button id="crearOrden" class="width-100" *ngIf="ordenForm.valid && clienteForm.valid" type="submit" mat-raised-button>Crear</button>
             </div>
         </form>
     </mat-card>
