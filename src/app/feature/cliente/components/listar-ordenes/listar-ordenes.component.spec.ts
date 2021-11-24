@@ -51,6 +51,7 @@ describe('ListarOrdenesComponent', () => {
     ordenService = TestBed.inject(OrdenService);
     clienteService = TestBed.inject(ClienteService);
 
+    
     spyOn(ordenService, 'eliminar').and.returnValue(
       of(true)
     );
@@ -62,7 +63,7 @@ describe('ListarOrdenesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Obteniendo ordenes de cliente', () => {
+  it('deberia obtener las ordenes del cliente', () => {
     spyOn(clienteService, 'obtenerOrdenesPorCliente').and.returnValue(
       of(ordenes)
     );
@@ -72,9 +73,10 @@ describe('ListarOrdenesComponent', () => {
       expect(resultado.length).toBe(2);
       expect(resultado).toEqual(ordenes);
     });
+    expect(component.identificacion).toEqual(cliente.identificacion);
   });
 
-  it('Eliminando orden', () => {
+  it('deberia eliminar una orden', () => {
     let orden = ordenes[1];
     let listaOrdenes: Orden[] = [orden];
     
@@ -87,7 +89,7 @@ describe('ListarOrdenesComponent', () => {
       expect(resultado.length).toBe(1);
       expect(resultado).toEqual(listaOrdenes);
     });
-    expect(ordenService.eliminar).toHaveBeenCalledTimes(1);
+    expect(ordenService.eliminar).toHaveBeenCalledWith(orden);
     expect(clienteService.obtenerOrdenesPorCliente).toHaveBeenCalledTimes(1);
   });
 

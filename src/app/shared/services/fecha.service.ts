@@ -18,7 +18,7 @@ export class FechaService {
   }
 
   formatearFechaConHora(fecha: Date) {
-    let fechaNueva = moment(fecha).format('YYYY-MM-DD');
+    let fechaNueva = moment(fecha).format('YYYY-MM-DD HH:mm:ss');
     return fechaNueva;
   }
 }
