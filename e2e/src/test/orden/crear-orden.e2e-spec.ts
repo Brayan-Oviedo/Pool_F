@@ -1,12 +1,14 @@
-import { CrearOrdenPage } from "../../page/orden/crear-orden.po";
+import { CrearOrdenPage } from "../../page/orden/crear-orden/crear-orden.po";
 import { AppPage } from "../../app.po";
 import { MenuPage } from "../../page/menu/menu.po";
 import { TicketDialogPage } from "../../page/ticket/ticket-dialog.po";
+import { NavbarPage } from "../../page/navbar/navbar.po";
 
 describe('Crear orden', () => {
 
     let page: AppPage;
     let menu: MenuPage;
+    let navbar: NavbarPage;
     let crearOrden: CrearOrdenPage;
     let ticketDialogPage: TicketDialogPage;
 
@@ -17,8 +19,19 @@ describe('Crear orden', () => {
     beforeEach(() => {
         page = new AppPage();
         menu = new MenuPage();
+        navbar = new NavbarPage();
         crearOrden = new CrearOrdenPage();
         ticketDialogPage = new TicketDialogPage();
+    });
+
+    it('deberia mostrar la pagina actual', async () => {
+        await page.navigateTo();
+        await menu.clickMenu();
+        await menu.clickMenuOrden();
+
+        await menu.clickMenuCrearOrden();
+
+        expect(navbar.obtenerPaginaActual()).toBe('Orden');
     });
 
     it('deberia crear la orden', async () => {
@@ -26,8 +39,8 @@ describe('Crear orden', () => {
         await menu.clickMenu();
         await menu.clickMenuOrden();
         await menu.clickMenuCrearOrden();
-        await crearOrden.setInputTiempoExtra(TIEMPO_EXTRA);
-        await crearOrden.setInputIdentificacionCliente(IDENTIFICACION_CLIENTE);
+        await crearOrden.asignarInputTiempoExtra(TIEMPO_EXTRA);
+        await crearOrden.asignarInputIdentificacionCliente(IDENTIFICACION_CLIENTE);
         await crearOrden.clickPickerFechaNacimiento();
         await crearOrden.clickAniosPickerFechaNacimiento();
         await crearOrden.clickBotonAtrasAniosPicker();
@@ -36,11 +49,14 @@ describe('Crear orden', () => {
         await crearOrden.clickDiaPicker();
 
         await crearOrden.clickBotonCrearOrden();
-        const alerta = await crearOrden.getTextoSwal();
+        const alerta = await crearOrden.obtenerTextoSwal();
         expect(alerta).toEqual(ORDEN_CREADA);
-        console.log('Aquiii: ' + ticketDialogPage.getTextoTicketId());
         expect(ticketDialogPage.getTextoTicketId()).not.toBe('Ticket');
         expect(ticketDialogPage.getTextoTicketCostoTotal()).not.toBe('$');
         expect(ticketDialogPage.getTextoTicketFechaVencimiento()).not.toBe('Vence:');
+
+        await ticketDialogPage.clickBotonCerrarTicket();
+        expect(crearOrden.obtenerTextoInputTiempoExtra()).toBe('');
+        expect(crearOrden.obtenerTextoInputIdentificacionCliente()).toBe('');
     });
 });

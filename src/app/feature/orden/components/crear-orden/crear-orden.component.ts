@@ -5,6 +5,7 @@ import { SwalService } from '@core/services/swal.service';
 import { Orden } from '@orden/shared/model/orden';
 import { OrdenService } from '@orden/shared/service/orden.service';
 import { FechaService } from '@shared/services/fecha.service';
+import { Ticket } from '@ticket/shared/model/ticket';
 import * as moment from 'moment';
 import { TicketDialogComponent } from 'src/app/feature/ticket/component/ticket-dialog/ticket-dialog.component';
 
@@ -37,12 +38,19 @@ export class CrearOrdenComponent implements OnInit {
     this.obtenerOrdenDelFormulario();
     this.ordenService.crear(this.orden).subscribe(
       ticket => {
-        this.dialogo.open(TicketDialogComponent, { data: ticket });
-        this.swalService.success('Orden creada','');
+        this.mostrarTicket(ticket);
+        this.swalService.success('Orden creada', '');
       }, fail => {
         this.swalService.error('No se logro crear el ticket', fail.error.mensaje);
       }
     );
+  }
+
+  private mostrarTicket(ticket: Ticket) {
+    this.dialogo.open(TicketDialogComponent, { data: ticket }).afterClosed()
+      .subscribe(() => {
+        this.crearFormularios();
+      });
   }
 
 

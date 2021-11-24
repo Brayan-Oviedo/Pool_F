@@ -3,8 +3,8 @@
 
   <mat-form-field *ngIf="busqueda">
     <mat-label>{{ tituloBusqueda }}</mat-label>
-    <input type="text" matInput [(ngModel)]="item">
-    <mat-icon matSuffix (click)="doBuscar()" *ngIf="item">search</mat-icon>
+    <input id="itemBusqueda" type="text" matInput [(ngModel)]="item">
+    <mat-icon matSuffix (click)="doBuscar()" *ngIf="item" id="botonBusqueda">search</mat-icon>
   </mat-form-field>
 
   <h2 id="paginaActual">{{ paginaActual }}</h2>

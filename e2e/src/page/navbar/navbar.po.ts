@@ -1,15 +1,23 @@
 import { by, element } from 'protractor';
 
 export class NavbarPage {
-
-    menu = element(by.id('menu'));
-    paginaActual = element(by.id('paginaActual'));
-
-    async getBotonMenu() {
-        return this.menu;
-    }
+    private paginaActual = element(by.id('paginaActual'));
+    private inputBusqueda = element(by.id('itemBusqueda'));
+    private botonBusqueda = element(by.id('botonBusqueda'));
 
     async obtenerPaginaActual() {
-        await this.paginaActual.getText();
+        return this.paginaActual.getText();
+    }
+
+    async clickBotonBusqueda() {
+        return this.botonBusqueda.click();
+    }
+
+    async obtenerTextoInputBusqueda() {
+        return this.inputBusqueda.getText();
+    }
+
+    async asignarTextoInputBusqueda(texto: string) {
+        return this.inputBusqueda.sendKeys(texto);
     }
 }
