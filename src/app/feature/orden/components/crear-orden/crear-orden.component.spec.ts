@@ -10,7 +10,6 @@ import { SwalService } from "@core/services/swal.service";
 import { OrdenService } from "@orden/shared/service/orden.service";
 import { FechaService } from "@shared/services/fecha.service";
 import { Ticket } from "@ticket/shared/model/ticket";
-//import * as moment from "moment";
 import { of } from "rxjs";
 import { CrearOrdenComponent } from "./crear-orden.component";
 
@@ -62,7 +61,7 @@ describe('CrearOrdenComponent', () => {
         expect(component.clienteForm.valid).toBeFalsy();
     });
 
-    it('Registrando orden', () => {
+    it('deberia registrar una orden', () => {
         expect(component.ordenForm.valid).toBeTruthy();
         expect(component.clienteForm.valid).toBeFalsy();
         component.ordenForm.controls.tiempoExtra.setValue(0);
