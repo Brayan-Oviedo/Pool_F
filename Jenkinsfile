@@ -22,24 +22,6 @@ pipeline {
             }
         }
 
-        stage('Install') {
-            steps {
-                sh 'npm install'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'ng build --configuration production'
-            }
-        }
-        
-        stage('Tests') {
-            steps {
-                sh 'ng test --code-coverage'
-            }
-        }
-
         stage('Sonar Scanner Coverage') {
             steps{
                 echo '------------>Análisis de código estático<------------'
