@@ -3,10 +3,6 @@ pipeline {
         label 'Slave4_Induccion'
     }
 
-    tools {
-        jdk 'JDK11_Centos'
-    }
-
     stages {
         stage('Checkout'){
             steps{
@@ -32,6 +28,11 @@ pipeline {
             }
         }
 
+        stage('Build') {
+            steps {
+                sh 'ng build'
+            }
+        }
         
         stage('Tests') {
             steps {
