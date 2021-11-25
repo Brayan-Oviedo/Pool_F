@@ -50,7 +50,7 @@ module.exports = function (config) {
       encoding: 'utf-8',
       outputFolder: 'reports/unit',
       legacyMode: false,
-      reportName: 'test-sonar.xml'
+      reportName: 'test-results.xml'
     },
     port: 9876,
     colors: true,
