@@ -1,6 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
+
   appName = element(by.id('appName'));
   
   navigateTo() {
@@ -10,5 +11,5 @@ export class AppPage {
   getAppName() {
     return this.appName.getText() as Promise<string>;
   }
-
+  
 }
