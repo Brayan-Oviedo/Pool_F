@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { SharedModule } from "@shared/shared.module";
-import { TicketDialogComponent } from "./component/ticket-dialog/ticket-dialog.component";
-import { TicketComponent } from "./component/ticket/ticket.component";
-import { TicketRoutingModule } from "./ticket-routing";
+import { NgModule } from '@angular/core';
+import { SharedModule } from '@shared/shared.module';
+import { TicketDialogComponent } from './component/ticket-dialog/ticket-dialog.component';
+import { TicketComponent } from './component/ticket/ticket.component';
+import { TicketRoutingModule } from './ticket-routing.module';
 
 @NgModule({
     declarations: [

@@ -1,4 +1,4 @@
-import { Cliente } from "src/app/feature/cliente/shared/model/cliente";
+import { Cliente } from 'src/app/feature/cliente/shared/model/cliente';
 
 export class Orden {
 

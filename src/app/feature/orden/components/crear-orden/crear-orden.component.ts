@@ -38,7 +38,7 @@ export class CrearOrdenComponent implements OnInit {
     this.obtenerOrdenDelFormulario();
     this.ordenService.crear(this.orden).subscribe(
       ticket => {
-        this.swalService.success('Orden creada', '');
+        this.swalService.exitoso('Orden creada', '');
         this.mostrarTicket(ticket);
       }, fail => {
         this.swalService.error('No se logro crear el ticket', fail.error.mensaje);

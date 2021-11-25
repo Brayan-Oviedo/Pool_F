@@ -1,7 +1,8 @@
-body {
+.body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
 
     padding: 2vh 4vw 2vh 4vw;
 }

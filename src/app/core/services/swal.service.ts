@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import Swal from "sweetalert2";
+import { Injectable } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Injectable()
 export class SwalService {
 
-    success(title: string, text: string): void {
+    exitoso(titulo: string, texto: string): void {
         Swal.fire({
-            title: title,
-            text: text,
+            title: titulo,
+            text: texto,
             icon: 'success',
             timer: 1500,
             timerProgressBar: false,
@@ -17,10 +17,10 @@ export class SwalService {
     }
 
 
-    error(tittle: string, text: string): void {
+    error(titulo: string, texto: string): void {
         Swal.fire({
-            title: tittle,
-            text: text,
+            title: titulo,
+            text: texto,
             icon: 'error',
             position: 'center',
             confirmButtonColor: '#ff00ff80'

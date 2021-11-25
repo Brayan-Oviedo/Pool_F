@@ -48,7 +48,7 @@ describe('CrearOrdenComponent', () => {
             of(ticket)
         );
         spyOn(matDialog, 'open');
-        spyOn(swalService, 'success');
+        spyOn(swalService, 'exitoso');
         fixture.detectChanges();
     });
 
@@ -77,6 +77,6 @@ describe('CrearOrdenComponent', () => {
         expect(component.orden.cliente.fechaNacimiento).toBe('2001-01-01');
         expect(ordenService.crear).toHaveBeenCalledTimes(1);
         expect(matDialog.open).toHaveBeenCalledTimes(1);
-        expect(swalService.success).toHaveBeenCalledTimes(1);
+        expect(swalService.exitoso).toHaveBeenCalledTimes(1);
     });
 })
