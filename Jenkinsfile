@@ -30,13 +30,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'ng build'
+                sh 'ng build --configuration production'
             }
         }
         
         stage('Tests') {
             steps {
-                sh 'ng test'
+                sh 'ng test --code-coverage'
             }
         }
 
