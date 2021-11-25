@@ -1,7 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
-  appName = element(by.xpath('/html/body/app-root/app-toolbar/mat-toolbar/span[2]'));
+  appName = element(by.id('appName'));
   
   navigateTo() {
     return browser.get(browser.baseUrl) as Promise<any>;
