@@ -32,11 +32,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'ng build'
-            }
-        }
         
         stage('Tests') {
             steps {
