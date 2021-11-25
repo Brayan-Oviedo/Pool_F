@@ -20,7 +20,7 @@ pipeline {
                     submoduleCfg: [], 
                     userRemoteConfigs: [[
                         credentialsId: 'GitHub_Brayan-Oviedo',
-			                  url:'https://github.com/Brayan-Oviedo/Pool_F'
+			                url:'https://github.com/Brayan-Oviedo/Pool_F'
                     ]]
                 ])
             }
@@ -31,10 +31,16 @@ pipeline {
                 sh 'npm install'
             }
         }
+
+        stage('Build') {
+            steps {
+                sh 'ng build'
+            }
+        }
         
         stage('Tests') {
             steps {
-                sh 'npm test'
+                sh 'ng test'
             }
         }
 
