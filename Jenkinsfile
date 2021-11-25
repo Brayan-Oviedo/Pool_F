@@ -29,7 +29,7 @@ pipeline {
 			submoduleCfg: [],
 			userRemoteConfigs: [[
 			credentialsId: 'GitHub_Brayan-Oviedo',
-			url:'https://github.com/Brayan-Oviedo/Pool_'
+			url:'https://github.com/Brayan-Oviedo/Pool_F'
 			]]
 		])
       }
