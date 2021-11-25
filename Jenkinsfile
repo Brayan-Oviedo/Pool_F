@@ -22,6 +22,12 @@ pipeline {
             }
         }
 
+        stage('Tests') {
+            steps {
+                sh 'npm test'
+            }
+        }
+
         stage('Sonar Scanner Coverage') {
             steps{
                 echo '------------>Análisis de código estático<------------'
