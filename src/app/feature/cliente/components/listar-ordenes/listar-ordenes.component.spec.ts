@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Cliente } from '@cliente/shared/model/cliente';
 import { ClienteService } from '@cliente/shared/service/cliente.service';
 import { MaterialModule } from '@core/material.module';
-import { HttpService } from '@core/services/http.service';
+import { HttpService } from '@core/services/http/http.service';
 import { SwalService } from '@core/services/swal.service';
 import { Orden } from '@orden/shared/model/orden';
 import { OrdenService } from '@orden/shared/service/orden.service';

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpService } from '@core/services/http.service';
+import { HttpService } from '@core/services/http/http.service';
 import { Ticket } from 'src/app/feature/ticket/shared/model/ticket';
 import { environment } from 'src/environments/environment';
 import { Orden } from '../model/orden';

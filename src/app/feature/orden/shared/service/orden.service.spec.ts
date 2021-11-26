@@ -2,7 +2,7 @@ import { HttpResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { Cliente } from '@cliente/shared/model/cliente';
-import { HttpService } from '@core/services/http.service';
+import { HttpService } from '@core/services/http/http.service';
 import * as moment from 'moment';
 import { Ticket } from 'src/app/feature/ticket/shared/model/ticket';
 import { environment } from 'src/environments/environment';

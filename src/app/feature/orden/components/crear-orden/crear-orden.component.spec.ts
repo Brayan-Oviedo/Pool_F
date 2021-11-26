@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@core/material.module';
-import { HttpService } from '@core/services/http.service';
+import { HttpService } from '@core/services/http/http.service';
 import { SwalService } from '@core/services/swal.service';
 import { OrdenService } from '@orden/shared/service/orden.service';
 import { FechaService } from '@shared/services/fecha.service';
