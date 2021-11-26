@@ -12,4 +12,4 @@ import { HomeComponent } from './component/home/home.component';
         SharedModule
     ]
 })
-export class HomeModule { }
+export class HomeModule {}

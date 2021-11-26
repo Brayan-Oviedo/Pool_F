@@ -26,4 +26,4 @@ import { MatListModule } from '@angular/material/list';
         MatListModule
     ]
 })
-export class MaterialModule { }
+export class MaterialModule {}

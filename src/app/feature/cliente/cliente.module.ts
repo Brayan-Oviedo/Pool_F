@@ -17,4 +17,4 @@ import { ClienteService } from './shared/service/cliente.service';
     ],
     providers: [ClienteService, OrdenService]
 })
-export class ClienteModule { }
+export class ClienteModule {}

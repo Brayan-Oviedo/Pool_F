@@ -14,15 +14,13 @@ export class FechaService {
 
   formatearFechaSinHora(fecha: Date) {
     const formato = 'YYYY-MM-DD'
-    let fechaNueva = moment(fecha)
-      .format(formato);
-    return fechaNueva;
+    let fechaNueva = moment(fecha);
+    return fechaNueva.format(formato);
   }
 
   formatearFechaConHora(fecha: Date) {
     const formato = 'YYYY-MM-DD HH:mm:ss';
-    let fechaNueva = moment(fecha)
-      .format(formato);
-    return fechaNueva;
+    let fechaNueva = moment(fecha);
+    return fechaNueva.format(formato);
   }
 }

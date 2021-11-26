@@ -16,4 +16,4 @@ import { OrdenService } from './shared/service/orden.service';
     ],
     providers: [OrdenService]
 })
-export class OrdenModule { }
+export class OrdenModule {}
