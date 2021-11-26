@@ -35,12 +35,11 @@ export class ManejadorError implements ErrorHandler {
   }
 
   private obtenerRespuesta(mensaje) {
-    const respuesta = {
+    return {
       fecha: new Date().toLocaleString(),
       path: window.location.href,
       mensaje,
     };
-    return respuesta;
   }
 
   private mostrarErrorSwal(mensaje): void {

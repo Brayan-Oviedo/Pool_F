@@ -9,6 +9,9 @@ import { Ticket } from '@ticket/shared/model/ticket';
 import * as moment from 'moment';
 import { TicketDialogComponent } from 'src/app/feature/ticket/component/ticket-dialog/ticket-dialog.component';
 
+const DIGITOS_MINIMOS_IDENTIFICACION_CLIENTE = 10;
+const NUMERO_MAXIMO_TIEMPO_EXTRA = 20;
+
 @Component({
   selector: 'app-crear-orden',
   templateUrl: './crear-orden.component.html',
@@ -19,7 +22,6 @@ export class CrearOrdenComponent implements OnInit {
   ordenForm: FormGroup;
   clienteForm: FormGroup;
   orden: Orden;
-
 
   constructor(
     protected formBuilder: FormBuilder,
@@ -61,11 +63,11 @@ export class CrearOrdenComponent implements OnInit {
 
   private crearFormularios() {
     this.ordenForm = this.formBuilder.group({
-      tiempoExtra: [0, [Validators.required, Validators.max(20)]]
+      tiempoExtra: [0, [Validators.required, Validators.max(NUMERO_MAXIMO_TIEMPO_EXTRA)]]
     });
 
     this.clienteForm = this.formBuilder.group({
-      identificacion: ['', [Validators.required, Validators.minLength(10)]],
+      identificacion: ['', [Validators.required, Validators.minLength(DIGITOS_MINIMOS_IDENTIFICACION_CLIENTE)]],
       fechaNacimiento: [this.fechaService.obtenerFechaActual(), [Validators.required]]
     });
   }
