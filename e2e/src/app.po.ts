@@ -7,7 +7,6 @@ export class AppPage {
   navigateTo() {
     return browser.get(browser.baseUrl) as Promise<any>;
   }
-
   getAppName() {
     return this.appName.getText() as Promise<string>;
   }

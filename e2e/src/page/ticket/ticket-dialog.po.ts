@@ -22,4 +22,5 @@ export class TicketDialogPage {
     async clickBotonCerrarTicket() {
         await this.botonCerrarTicket.click();
     }
+
 }

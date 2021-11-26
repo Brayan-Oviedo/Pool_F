@@ -27,4 +27,5 @@ export class MenuPage {
     async clickMenuListarOrdenes() {
         await this.menuListarOrdenes.click();
     }
+    
 }

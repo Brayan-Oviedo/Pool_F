@@ -1,4 +1,4 @@
-import { by, element } from "protractor";
+import { by, element } from 'protractor';
 
 
 export class CrearOrdenPage {
@@ -69,4 +69,5 @@ export class CrearOrdenPage {
     async obtenerTextoSwal(): Promise<string> {
         return await this.swal.getText();
     }
+    
 }

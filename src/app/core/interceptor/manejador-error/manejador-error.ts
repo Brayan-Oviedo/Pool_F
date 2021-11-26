@@ -7,7 +7,7 @@ import { HTTP_ERRORES_CODIGO } from '../http-codigo-error';
 @Injectable()
 export class ManejadorError implements ErrorHandler {
 
-  constructor(private swalService: SwalService) {}
+  constructor(private swalService: SwalService) { }
 
   handleError(error: string | Error): void {
     const mensajeError = this.mensajePorDefecto(error);
@@ -53,4 +53,5 @@ export class ManejadorError implements ErrorHandler {
     }
     return HTTP_ERRORES_CODIGO[httpCode];
   }
+  
 }

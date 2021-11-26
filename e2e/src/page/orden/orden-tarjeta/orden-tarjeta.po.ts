@@ -28,4 +28,5 @@ export class OrdenTarjetaPage {
     async clickBotonEliminarOrden() {
         await this.botonEliminarOrden.click();
     }
+    
 }

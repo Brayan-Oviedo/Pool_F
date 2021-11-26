@@ -1,10 +1,10 @@
-import { MenuPage } from "../../page/menu/menu.po";
-import { AppPage } from "../../app.po";
-import { NavbarPage } from "../../page/navbar/navbar.po";
-import { CrearOrdenPage } from "../../page/orden/crear-orden/crear-orden.po";
-import { TicketDialogPage } from "../../page/ticket/ticket-dialog.po";
-import { ListarOrdenesPage } from "../../page/cliente/listar-ordenes.po";
-import { OrdenTarjetaPage } from "../../page/orden/orden-tarjeta/orden-tarjeta.po";
+import { MenuPage } from '../../page/menu/menu.po';
+import { AppPage } from '../../app.po';
+import { NavbarPage } from '../../page/navbar/navbar.po';
+import { CrearOrdenPage } from '../../page/orden/crear-orden/crear-orden.po';
+import { TicketDialogPage } from '../../page/ticket/ticket-dialog.po';
+import { ListarOrdenesPage } from '../../page/cliente/listar-ordenes.po';
+import { OrdenTarjetaPage } from '../../page/orden/orden-tarjeta/orden-tarjeta.po';
 
 describe('Listar ordenes', () => {
 
@@ -21,7 +21,7 @@ describe('Listar ordenes', () => {
 
     beforeEach(() => {
         page = new AppPage();
-        navbar = new NavbarPage;
+        navbar = new NavbarPage();
         menu = new MenuPage();
         crearOrden = new CrearOrdenPage();
         ticketDialog = new TicketDialogPage();
@@ -40,7 +40,7 @@ describe('Listar ordenes', () => {
     });
 
     it('deberia listar ordenes del cliente', async () => {
-        //Se crea una orden
+        // Se crea una orden
         await page.navigateTo();
         await menu.clickMenu();
         await menu.clickMenuOrden();
@@ -61,7 +61,6 @@ describe('Listar ordenes', () => {
         await menu.clickMenuCliente();
         await menu.clickMenuListarOrdenes();
         await navbar.asignarTextoInputBusqueda(IDENTIFICACION_CLIENTE);
-        
         await navbar.clickBotonBusqueda();
 
         expect(listarOrdenes.contarOrdenes()).toBe(1);
@@ -84,4 +83,5 @@ describe('Listar ordenes', () => {
 
         expect(listarOrdenes.contarOrdenes()).toBe(0);
     })
+    
 });

@@ -19,7 +19,7 @@ import { SwalService } from './services/swal.service';
   exports: [
     ToolbarComponent,
     MaterialModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   providers: [
     HttpService,

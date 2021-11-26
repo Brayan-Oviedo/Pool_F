@@ -1,8 +1,8 @@
-import { CrearOrdenPage } from "../../page/orden/crear-orden/crear-orden.po";
-import { AppPage } from "../../app.po";
-import { MenuPage } from "../../page/menu/menu.po";
-import { TicketDialogPage } from "../../page/ticket/ticket-dialog.po";
-import { NavbarPage } from "../../page/navbar/navbar.po";
+import { CrearOrdenPage } from '../../page/orden/crear-orden/crear-orden.po';
+import { AppPage } from '../../app.po';
+import { MenuPage } from '../../page/menu/menu.po';
+import { TicketDialogPage } from '../../page/ticket/ticket-dialog.po';
+import { NavbarPage } from '../../page/navbar/navbar.po';
 
 describe('Crear orden', () => {
 
@@ -59,4 +59,5 @@ describe('Crear orden', () => {
         expect(crearOrden.obtenerTextoInputTiempoExtra()).toBe('');
         expect(crearOrden.obtenerTextoInputIdentificacionCliente()).toBe('');
     });
+    
 });
