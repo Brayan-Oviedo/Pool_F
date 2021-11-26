@@ -40,8 +40,6 @@ export class CrearOrdenComponent implements OnInit {
       ticket => {
         this.swalService.exitoso('Orden creada', '');
         this.mostrarTicket(ticket);
-      }, fail => {
-        this.swalService.error('No se logro crear el ticket', fail.error.mensaje);
       }
     );
   }

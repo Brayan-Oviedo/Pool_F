@@ -34,8 +34,6 @@ export class ListarOrdenesComponent implements OnInit {
   eliminarOrden(orden: Orden) {
     this.ordenService.eliminar(orden).subscribe(() => {
       this.obtenerOrdenes(this.identificacion);
-    }, fail => {
-      this.swalService.error('No se logro eliminar la orden', fail.error.message);
     });
   }
 

@@ -1,15 +1,18 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
-import { HTTP_ERRORES_CODIGO } from './http-codigo-error';
+import { SwalService } from '@core/services/swal.service';
+import { environment } from '../../../../environments/environment';
+import { HTTP_ERRORES_CODIGO } from '../http-codigo-error';
 
 @Injectable()
 export class ManejadorError implements ErrorHandler {
-  constructor() {}
+
+  constructor(private swalService: SwalService) {}
 
   handleError(error: string | Error): void {
     const mensajeError = this.mensajePorDefecto(error);
     this.imprimirErrorConsola(mensajeError);
+    this.mostrarErrorSwal(mensajeError);
   }
 
   private mensajePorDefecto(error) {
@@ -25,14 +28,24 @@ export class ManejadorError implements ErrorHandler {
   }
 
   private imprimirErrorConsola(mensaje): void {
+    const respuesta = this.obtenerRespuesta(mensaje);
+    if (!environment.production) {
+      window.console.error('Error inesperado:\n', respuesta);
+    }
+  }
+
+  private obtenerRespuesta(mensaje) {
     const respuesta = {
       fecha: new Date().toLocaleString(),
       path: window.location.href,
       mensaje,
     };
-    if (!environment.production) {
-      window.console.error('Error inesperado:\n', respuesta);
-    }
+    return respuesta;
+  }
+
+  private mostrarErrorSwal(mensaje): void {
+    const respuesta = this.obtenerRespuesta(mensaje);
+    this.swalService.error('Ocurrio un error', respuesta.mensaje.error.mensaje);
   }
 
   public obtenerErrorHttpCode(httpCode: number): string {
