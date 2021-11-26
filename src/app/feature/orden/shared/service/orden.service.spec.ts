@@ -1,13 +1,13 @@
-import { HttpResponse } from "@angular/common/http";
-import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
-import { TestBed } from "@angular/core/testing";
-import { Cliente } from "@cliente/shared/model/cliente";
-import { HttpService } from "@core/services/http.service";
-import * as moment from "moment";
-import { Ticket } from "src/app/feature/ticket/shared/model/ticket";
-import { environment } from "src/environments/environment";
-import { Orden } from "../model/orden";
-import { OrdenService } from "./orden.service";
+import { HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { Cliente } from '@cliente/shared/model/cliente';
+import { HttpService } from '@core/services/http.service';
+import * as moment from 'moment';
+import { Ticket } from 'src/app/feature/ticket/shared/model/ticket';
+import { environment } from 'src/environments/environment';
+import { Orden } from '../model/orden';
+import { OrdenService } from './orden.service';
 
 
 describe('OrdenService', () => {
@@ -20,14 +20,14 @@ describe('OrdenService', () => {
             imports: [HttpClientTestingModule],
             providers: [OrdenService, HttpService]
         });
-    
+
         httpMock = injector.inject(HttpTestingController);
         service = injector.inject(OrdenService);
     });
 
     it('should be created', () => {
         const ordenService = TestBed.inject(OrdenService);
-        expect(ordenService).toBeTruthy(); 
+        expect(ordenService).toBeTruthy();
     });
 
     it('deberia crear una orden', () => {
@@ -52,5 +52,5 @@ describe('OrdenService', () => {
         expect(req.request.method).toBe('DELETE');
         req.event(new HttpResponse<boolean>({body: true}));
     });
- 
+
 });

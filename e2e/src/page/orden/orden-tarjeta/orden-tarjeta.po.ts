@@ -2,7 +2,7 @@ import { by, element } from 'protractor';
 
 
 export class OrdenTarjetaPage {
-    
+
     private ordenId = element(by.id('ordenId'));
     private tiempoExtra = element(by.id('tiempoExtra'));
     private identificacionCliente = element(by.id('identificacionCliente'));
@@ -11,7 +11,7 @@ export class OrdenTarjetaPage {
 
     async obtenerTextoOrdenId() {
         return this.ordenId.getText();
-    }    
+    }
 
     async obtenerTextoTiempoExtra() {
         return this.tiempoExtra.getText();
@@ -28,5 +28,5 @@ export class OrdenTarjetaPage {
     async clickBotonEliminarOrden() {
         await this.botonEliminarOrden.click();
     }
-    
+
 }

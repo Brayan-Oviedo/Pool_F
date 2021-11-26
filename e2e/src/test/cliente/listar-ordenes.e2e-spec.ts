@@ -82,6 +82,6 @@ describe('Listar ordenes', () => {
         await ordenTarjeta.clickBotonEliminarOrden();
 
         expect(listarOrdenes.contarOrdenes()).toBe(0);
-    })
-    
+    });
+
 });

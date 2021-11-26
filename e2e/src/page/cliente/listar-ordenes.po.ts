@@ -7,5 +7,5 @@ export class ListarOrdenesPage {
     async contarOrdenes() {
         return this.listaOrdenes.count();
     }
-    
+
 }

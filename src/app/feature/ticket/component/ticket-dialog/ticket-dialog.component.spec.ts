@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
-import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
-import { MaterialModule } from "@core/material.module";
-import { TicketDialogComponent } from "./ticket-dialog.component";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { MaterialModule } from '@core/material.module';
+import { TicketDialogComponent } from './ticket-dialog.component';
 
 
 describe('TicketDialogComponent', () => {

@@ -69,5 +69,5 @@ export class CrearOrdenPage {
     async obtenerTextoSwal(): Promise<string> {
         return await this.swal.getText();
     }
-    
+
 }

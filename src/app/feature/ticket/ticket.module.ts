@@ -14,8 +14,4 @@ import { TicketRoutingModule } from './ticket-routing.module';
         SharedModule
     ]
 })
-export class TicketModule {
-
-    constructor() {}
-
-}
+export class TicketModule {}

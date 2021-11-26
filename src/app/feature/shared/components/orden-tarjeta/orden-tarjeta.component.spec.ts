@@ -1,15 +1,15 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
-import { Cliente } from "@cliente/shared/model/cliente";
-import { MaterialModule } from "@core/material.module";
-import { Orden } from "@orden/shared/model/orden";
-import { OrdenTarjetaComponent } from "./orden-tarjeta.component";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { Cliente } from '@cliente/shared/model/cliente';
+import { MaterialModule } from '@core/material.module';
+import { Orden } from '@orden/shared/model/orden';
+import { OrdenTarjetaComponent } from './orden-tarjeta.component';
 
 
 describe('OrdenTarjetaComponent', () => {
   let component: OrdenTarjetaComponent;
   let fixture: ComponentFixture<OrdenTarjetaComponent>;
-  let cliente: Cliente = new Cliente('1234567890', '2001-01-01');
-  let orden: Orden = new Orden(1, 1, cliente);
+  const cliente: Cliente = new Cliente('1234567890', '2001-01-01');
+  const orden: Orden = new Orden(1, 1, cliente);
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({

@@ -14,8 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TicketRoutingModule {
-
-  constructor() {}
-
-}
+export class TicketRoutingModule {}

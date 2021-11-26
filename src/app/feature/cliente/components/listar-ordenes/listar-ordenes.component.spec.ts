@@ -51,7 +51,7 @@ describe('ListarOrdenesComponent', () => {
     ordenService = TestBed.inject(OrdenService);
     clienteService = TestBed.inject(ClienteService);
 
-    
+
     spyOn(ordenService, 'eliminar').and.returnValue(
       of(true)
     );
@@ -77,9 +77,9 @@ describe('ListarOrdenesComponent', () => {
   });
 
   it('deberia eliminar una orden', () => {
-    let orden = ordenes[1];
-    let listaOrdenes: Orden[] = [orden];
-    
+    const orden = ordenes[1];
+    const listaOrdenes: Orden[] = [orden];
+
     spyOn(clienteService, 'obtenerOrdenesPorCliente').and.returnValue(
       of(listaOrdenes)
     );

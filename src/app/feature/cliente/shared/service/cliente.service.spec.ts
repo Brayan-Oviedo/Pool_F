@@ -1,10 +1,10 @@
-import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
-import { TestBed } from "@angular/core/testing";
-import { HttpService } from "@core/services/http.service";
-import { Orden } from "@orden/shared/model/orden";
-import { environment } from "src/environments/environment";
-import { Cliente } from "../model/cliente";
-import { ClienteService } from "./cliente.service";
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpService } from '@core/services/http.service';
+import { Orden } from '@orden/shared/model/orden';
+import { environment } from 'src/environments/environment';
+import { Cliente } from '../model/cliente';
+import { ClienteService } from './cliente.service';
 
 
 describe('ClienteService', () => {
@@ -39,5 +39,5 @@ describe('ClienteService', () => {
         expect(req.request.method).toBe('GET');
         req.flush(ordenes);
     });
-  
+
 });

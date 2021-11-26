@@ -59,5 +59,5 @@ describe('Crear orden', () => {
         expect(crearOrden.obtenerTextoInputTiempoExtra()).toBe('');
         expect(crearOrden.obtenerTextoInputIdentificacionCliente()).toBe('');
     });
-    
+
 });

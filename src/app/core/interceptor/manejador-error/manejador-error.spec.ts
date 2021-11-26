@@ -9,7 +9,7 @@ describe('ManejadorError', ()=> {
 
     beforeEach(() => {
         manejador = TestBed.inject(ManejadorError);
-        error = TestBed.inject(HttpErrorResponse); 
+        error = TestBed.inject(HttpErrorResponse);
     });
 
     it('deberia handlear el error', () => {
